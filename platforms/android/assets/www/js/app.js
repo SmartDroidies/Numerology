@@ -9,8 +9,16 @@ numerologyApp.config(['$routeProvider',
 				templateUrl : 'partials/home.html',
 				controller : 'HomeCtrl'
 			}).
+			when('/numerology', {
+				templateUrl : 'partials/numerology.html',
+				controller : 'NumerologyCtrl'
+			}).
+			when('/compatibility', {
+				templateUrl : 'partials/compatibility.html',
+				controller : 'NumerologyCtrl'
+			}).
 			otherwise({
-				redirectTo : '/home'
+				redirectTo : '/numerology'
 			});
 		}
 	]);

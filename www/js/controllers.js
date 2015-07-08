@@ -15,3 +15,17 @@ numerologyControllers.controller('HomeCtrl', ['$scope',
 	$scope.showHome();
 }]);
 
+
+numerologyControllers.controller('NumerologyCtrl', ['$scope', 
+  function($scope) {
+	$scope.display = function () {         
+		console.log("Display Screen For Numerology");		
+	}
+	
+	
+	//Show Home
+	$scope.display();
+}]);
+
+
+
