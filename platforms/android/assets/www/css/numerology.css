@@ -1,0 +1,36 @@
+body {
+	
+}
+
+body, h1, h2, h3, h4 {
+	color : #960707;
+}
+
+.navbar-nlogy {
+	background: linear-gradient(#F4F3B1, #C8F966);
+  	border-color: #BFF94B;
+  	padding-left: 40px;
+}
+
+.main-title {
+	font-size: 24px;
+  	padding: 5px 5px;
+  	margin: 5px 5px;
+  	font-weight: bold;
+}
+
+.menu-control {
+	position : absolute;
+	left : 5px;
+	top : 5px;
+	height: 38px;
+  	width: 38px;
+}
+
+.setting-control {
+	position : absolute;
+	right : 5px;
+	top : 5px;
+	height: 38px;
+  	width: 38px;
+}
