@@ -16,6 +16,7 @@ numerologyControllers.controller('HomeCtrl', ['$scope',
 }]);
 
 
+//Controller for Numerology
 numerologyControllers.controller('NumerologyCtrl', ['$scope', 
   function($scope) {
 	$scope.display = function () {         
@@ -26,6 +27,47 @@ numerologyControllers.controller('NumerologyCtrl', ['$scope',
 	//Show Home
 	$scope.display();
 }]);
+
+//Controller for Compatibility
+numerologyControllers.controller('CompatibilityCtrl', ['$scope', 
+  function($scope) {
+	$scope.displayCompat = function () {         
+		console.log("Display Screen For Compatibility Calculator");		
+	}
+	
+	
+	//Show Home
+	$scope.displayCompat();
+}]);
+
+
+//Controller for Calculator
+numerologyControllers.controller('CalculatorCtrl', ['$scope', 
+  function($scope) {
+	$scope.displayCalc = function () {         
+		console.log("Display Screen For Numerology Calculator");		
+	}
+	
+	
+	//Show Home
+	$scope.displayCalc();
+}]);
+
+//Controller for Knowledge
+numerologyControllers.controller('KnowledgeCtrl', ['$scope', 
+  function($scope) {
+	$scope.displayKnowledge = function () {         
+		console.log("Display Screen For Knowledge");		
+	}
+	
+	
+	//Show Home
+	$scope.displayKnowledge();
+}]);
+
+
+
+
 
 
 

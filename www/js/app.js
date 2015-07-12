@@ -15,7 +15,19 @@ numerologyApp.config(['$routeProvider',
 			}).
 			when('/compatibility', {
 				templateUrl : 'partials/compatibility.html',
-				controller : 'NumerologyCtrl'
+				controller : 'CompatibilityCtrl'
+			}).
+			when('/calculator', {
+				templateUrl : 'partials/calculator.html',
+				controller : 'CalculatorCtrl'
+			}).
+			when('/checksheet', {
+				templateUrl : 'partials/checksheet.html',
+				controller : 'ChecksheetCtrl'
+			}).
+			when('/knowledge', {
+				templateUrl : 'partials/knowledge.html',
+				controller : 'KnowledgeCtrl'
 			}).
 			otherwise({
 				redirectTo : '/numerology'
