@@ -34,3 +34,62 @@ body, h1, h2, h3, h4 {
 	height: 38px;
   	width: 38px;
 }
+
+/* Menu Styling */
+#menu  {
+	background: #F2F7BE;
+	box-shadow: 5px 5px 5px #A8A88E;
+	position: absolute;
+	top: 40px;
+	z-index: 99;
+	display: none;
+}
+
+#menu ul li {
+	border-bottom: 1px Solid #960707;
+}
+
+#menu ul li  a {
+	font-size: 16px;
+	color: #960707;	
+	padding-right: 10px;
+	font-weight: bold;
+}
+
+#menu ul li.nav-header {
+	font-size: 22px;
+	padding: 8px;
+	color: #1F1F1F;	
+	font-weight : bold;
+	background: #ACACAC;
+}
+
+/* Setting Styling */
+#setting  {
+	background: #F2F7BE;
+	box-shadow: 5px 5px 5px #A8A88E;
+	position: absolute;
+	top: 40px;
+	right: 0px;
+	z-index: 99;
+	display: none;
+}
+
+#setting ul li {
+	border-bottom: 1px Solid #90c525;	
+}
+
+#setting ul li  a {
+	font-size: 18px;
+	color: #960707;	
+	padding-right: 20px;
+}
+
+#setting ul li.nav-header {
+	font-size: 20px;
+	padding: 8px;
+	color: #1F1F1F;	
+	font-weight : bold;
+	background: #ACACAC;
+}
+
