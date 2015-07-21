@@ -1,1 +1,27 @@
-<div>Numerology Page</div>
+<div id="cnt-numerology" class="shaded col-xs-12 padless nomargin">
+	<form class="rounded-form col-xs-12" data-toggle="validator" role="form">
+		<div class="row-input col-xs-12">
+			<div class="fld-label col-xs-4">
+				<label for="inputName">Enter Name</label>
+			</div>
+			<div class="fld-value col-xs-8">	
+				<input class="form-control field-medium" type="text" id="inputName" required ng-model="numerology.name" placeholder="Enter Name" />
+			</div>	
+		</div>
+		<div class="row-input col-xs-12">
+			<div class="fld-label col-xs-4">
+				<label for="inputDOB">Date Of Birth</label>
+			</div>
+			<div class="fld-value col-xs-8">	
+				<input class="form-control field-medium" type="date" id="inputDOB" required ng-model="numerology.dob" placeholder="dd/mm/yyyy" />
+			</div>	
+		</div>
+		<div class="row-input centered col-xs-12">
+			<button id="btnCalculate" type="submit" ng-click="addAccount(account)" class="btn btn-numer">Calculate</button>
+			<button type="submit" ng-click="numerology={}" class="btn btn-numer">Clear</button>
+		</div>
+		<pre>form = {{numerology | json}}</pre>
+	</form>	
+</div>
+
+

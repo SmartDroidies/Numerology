@@ -1,10 +1,10 @@
 body {
 	font-family: :Calibri;
-	
+	background-color: #F8FFEC;
 }
 
 body, h1, h2, h3, h4 {
-	color : #960707;
+	/* color : #960707; */
 }
 
 .navbar-nlogy {
@@ -95,5 +95,45 @@ body, h1, h2, h3, h4 {
 }
 
 .content {
-	margin-top: 50px;
+	margin: 50px 0px 0px 0px;
+	padding: 5px;
+}
+
+.shaded {
+	background-color: #454633; 
+}
+
+.rounded-form {
+	padding: 5px;
+  	margin: 0px;
+  	border-radius: 10px;
+  	background: linear-gradient(#F4F3B1, #C8F966);
+ }
+
+.padless {
+	padding : 0px;
+}
+
+.nomargin {
+	margin : 0px;
+}
+
+.row-input {
+	padding: 5px 3px;
+  	margin: 0px;
+}
+
+.fld-label {
+	margin-top: 10px;
+	color: #960707;
+}
+
+.centered {
+	text-align: center;
+}
+
+.btn-numer {
+	color: #060606;
+  	background-color: #f0ad4e;
+  	border-color: #eea236;
 }
