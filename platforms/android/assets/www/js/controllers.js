@@ -11,17 +11,31 @@ numerologyControllers.controller('HomeCtrl', ['$scope',
 	}
 	
 	
+
+
 	//Show Home
 	$scope.showHome();
 }]);
 
 
 //Controller for Numerology
-numerologyControllers.controller('NumerologyCtrl', ['$scope', 
-  function($scope) {
+numerologyControllers.controller('NumerologyCtrl', ['$scope',  'NumerologyService', 
+  function($scope, numerService) {
 	$scope.display = function () {         
 		console.log("Display Screen For Numerology");		
 	}
+
+	$scope.calculate = function (numerology) {         
+		
+		console.log("Calculate Numerology");
+
+		var result = numerService.calculateNumerology(numerology); 
+		
+		numerology.result = result;
+		$scope.numerology = numerology;
+
+	}
+	
 	
 	
 	//Show Home

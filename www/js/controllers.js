@@ -31,11 +31,6 @@ numerologyControllers.controller('NumerologyCtrl', ['$scope',  'NumerologyServic
 
 		var result = numerService.calculateNumerology(numerology); 
 		
-		//FIXME - Write Service to calculate 
-		//var result = {};
-		//result.lifepath = 10;
-		//result.expression = 5;
-
 		numerology.result = result;
 		$scope.numerology = numerology;
 

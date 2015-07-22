@@ -1,6 +1,6 @@
 'use strict';
 /* App Module */
-var numerologyApp = angular.module('numerologyApp', ['ngRoute', 'ngTouch', 'numerologyControllers', 'numerologyServices']);
+var numerologyApp = angular.module('numerologyApp', ['ngRoute', 'ngTouch', 'numerologyControllers', 'numerologyServices', 'underscore']);
 
 numerologyApp.config(['$routeProvider',
 		function ($routeProvider) {

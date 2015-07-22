@@ -1,6 +1,7 @@
 body {
 	font-family: :Calibri;
 	background-color: #F8FFEC;
+	height: 100%;
 }
 
 body, h1, h2, h3, h4 {
@@ -100,7 +101,7 @@ body, h1, h2, h3, h4 {
 }
 
 .shaded {
-	background-color: #454633; 
+	/* background-color: #454633; */
 }
 
 .rounded-form {
@@ -136,4 +137,11 @@ body, h1, h2, h3, h4 {
 	color: #060606;
   	background-color: #f0ad4e;
   	border-color: #eea236;
+}
+
+.result {
+	padding: 5px;
+  	margin-top: 10px;
+  	border-radius: 10px;
+  	background: #C8F966;
 }

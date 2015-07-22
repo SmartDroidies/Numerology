@@ -17,11 +17,15 @@
 			</div>	
 		</div>
 		<div class="row-input centered col-xs-12">
-			<button id="btnCalculate" type="submit" ng-click="addAccount(account)" class="btn btn-numer">Calculate</button>
+			<button id="btnCalculate" type="submit" ng-click="calculate(numerology)" class="btn btn-numer">Calculate</button>
 			<button type="submit" ng-click="numerology={}" class="btn btn-numer">Clear</button>
 		</div>
-		<pre>form = {{numerology | json}}</pre>
+		<!--pre>form = {{numerology | json}}</pre-->
 	</form>	
+	<div class="col-xs-12 result">
+		<div>Life Path - {{numerology.result.lifepath}}</div>	
+		<div>Expression - {{numerology.result.expression}}</div>
+	</div>	
 </div>
 
 
