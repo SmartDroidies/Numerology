@@ -29,8 +29,12 @@ numerologyApp.config(['$routeProvider',
 				templateUrl : 'partials/knowledge.html',
 				controller : 'KnowledgeCtrl'
 			}).
+			when('/tool/ws-name/:name', {
+				templateUrl : 'partials/tools/ws-name.html',
+				controller : 'ToolsCtrl'
+			}).
 			otherwise({
-				redirectTo : '/numerology'
+				redirectTo : '/tool/ws-name/ws-name'
 			});
 		}
 	]);

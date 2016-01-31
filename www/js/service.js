@@ -3,7 +3,7 @@ var numerologyServices = angular.module('numerologyServices', []);
 
 
 //Factory for numerology service operations
-numerologyServices.factory ('NumerologyService', function (CalculatorService, _) {
+numerologyServices.factory ('NumerologyService', function (CalculatorService, _, $http, $q) {
 	var factory = {}; 
 	
 	//Calculate Numerology Numbers
@@ -16,7 +16,6 @@ numerologyServices.factory ('NumerologyService', function (CalculatorService, _)
 
 		//result.lifepath = 5;
 		//result.expression = 3;
-
 		return result;
 	}
 
@@ -29,12 +28,11 @@ numerologyServices.factory ('NumerologyService', function (CalculatorService, _)
 		return lifePathNo;
 	}
 
-
 	//Calculate Expression Number
-	factory.evaluateExpression = function(numerology, _) {
+	factory.evaluateExpression = function(numerology) {
 		var expressionNo  = 0;
 
-		console.log("Name : " + numerology.name);
+		//console.log("Name : " + numerology.name);
 		if(numerology.name) {
 			var chars = numerology.name.split("");
 			//console.log("Char Array: " + chars);
@@ -48,6 +46,10 @@ numerologyServices.factory ('NumerologyService', function (CalculatorService, _)
 
 		}
 
+		if(expressionNo.toString().length > 1) {
+			console.log("Reduce to single digit : " + expressionNo);
+		}
+		//console.log("Digit Length : " + expressionNo.length);
 		/*
 		while (NumerologyUtil.isMultiDigit(expression)) {
 			expression = deriveNumerologyDigit(expression);
@@ -57,7 +59,53 @@ numerologyServices.factory ('NumerologyService', function (CalculatorService, _)
 		return expressionNo;
 	}
 
+	//Load List of Tools
+	factory.loadToolList = function() {
+		console.log('Load Tool List From Filesystem');
+		return $http.get('files/tools.json');
+	};
 
+
+	//Collect list of tools 
+	factory.collectTools = function() {
+		var deferred = $q.defer();
+		var promise = this.loadToolList();
+   		promise.then(
+      		function(payload) { 
+          		tools = payload.data;
+				if(tools) {
+					//cacheService.put(key, categories);
+				}
+          		deferred.resolve({tools: tools});
+      		},
+      		function(errorPayload) {
+      			console.log('Failure loading categories ' + errorPayload);
+      			deferred.reject(errorPayload);
+      		});
+
+		/*
+		var key = 'numer-tools';
+		var categories = cacheService.get(key);
+		if(!categories) {
+			var promise = this.loadCategories();
+       		promise.then(
+          		function(payload) { 
+              		categories = payload.data;
+					if(categories) {
+						cacheService.put(key, categories);
+					}
+              		deferred.resolve({categories: categories});
+          		},
+          		function(errorPayload) {
+          			console.log('Failure loading categories ' + errorPayload);
+          			deferred.reject(errorPayload);
+          		});
+		} else {
+			deferred.resolve({categories: categories});
+		}
+		*/
+		return deferred.promise;
+	} 
 
     return factory;
 }); 
@@ -73,11 +121,22 @@ numerologyServices.factory ('CalculatorService', function () {
 		var value = 0;
 
 		//FIXME - Calculate NUmerologu Value here
-		console.log("Calculate Value for " + inputChar);
+		//console.log("Calculate Value for " + inputChar);
 		value = 5;
 
 		return value;
 	}
+
+
+	//Derive Single Digit
+	factoryCalc.deriveSingleDigit = function(digit) {
+		var singleDigit = 0;
+
+		//FIXME - Derive Single Digit
+
+		return singleDigit;
+	}
+
 
     return factoryCalc;
 }); 

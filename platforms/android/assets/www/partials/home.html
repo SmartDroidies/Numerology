@@ -1,2 +1,146 @@
-<div>Home page</div>
-<div>Welcome {{name}}</div>
+<div class="main col-xs-12">
+
+	<!-- Header -->
+	<nav class="navbar navbar-default navbar-fixed-top navbar-nlogy col-xs-12" role="navigation">
+	  <div class="navbar-header main-header col-xs-12">
+	    <img id="menu-cntrl" class="menu-control" src="img/nav_menu.png" ng-click="showMenu()"/>
+	    <div class="head_section col-xs-12">
+	      <h2  id="main-title" class="main-title">Numerology</h2>
+	    </div>
+	    <img id="setting-cntrl" class="setting-control" src="img/setting.png" ng-click="showSetting()"/>
+	  </div>
+	</nav>
+
+	<ul id="main-tabs" class="nav nav-tabs col-xs-12 main-tabs">
+		<li class="col-xs-3" ng-class="{'active': tab == 1}" ng-click="calculator()">
+			<a class="main-tab-link">Calc </a>
+		</li>
+		<li class="col-xs-3" ng-class="{'active': tab == 2}" ng-click="compatibility()">
+			<a class="main-tab-link">Compat </a>
+		</li>
+		<li class="col-xs-3" ng-class="{'active': tab == 3}" ng-click="tools()">
+			<a class="main-tab-link">Tools </a>
+		</li>
+		<li class="col-xs-3" ng-class="{'active': tab == 4}" ng-click="knowledge()">
+			<a class="main-tab-link">Knowledge </a>
+		</li>
+	</ul>
+
+
+	<div id="inner-content" class="nav-section ui-page-active col-xs-12 inner-content" data-role="page">
+	    <!-- Group View for Numerology Calculator --> 
+		<div id="cnt-numerology" ng-if="tab == 1" class="shaded col-xs-12 padless nomargin">
+			<form class="rounded-form col-xs-12" data-toggle="validator" role="form">
+				<div class="row-input col-xs-12">
+					<div class="fld-label col-xs-4">
+						<label for="inputName">Enter Name</label>
+					</div>
+					<div class="fld-value col-xs-8">	
+						<input class="form-control field-medium" type="text" id="inputName" required ng-model="numerology.name" placeholder="Enter Name" />
+					</div>	
+				</div>
+				<div class="row-input col-xs-12">
+					<div class="fld-label col-xs-4">
+						<label for="inputDOB">Date Of Birth</label>
+					</div>
+					<div class="fld-value col-xs-8">	
+						<input class="form-control field-medium" type="date" id="inputDOB" required ng-model="numerology.dob" placeholder="dd/mm/yyyy" />
+					</div>	
+				</div>
+				<div class="row-input centered col-xs-12">
+					<button id="btnCalculate" type="submit" ng-click="calculate(numerology)" class="btn btn-numer">Calculate</button>
+					<button type="submit" ng-click="numerology={}" class="btn btn-numer">Clear</button>
+				</div>
+				<pre>form = {{numerology | json}}</pre>
+			</form>	
+			<div class="col-xs-12 result">
+				<div>Psychic - {{numerology.result.psychic}}</div>
+				<div>Life Path - {{numerology.result.lifepath}}</div>	
+				<div>Expression - {{numerology.result.expression}}</div>
+			</div>	
+		</div>
+
+	    <!-- Group View for Tools --> 
+		<div id="cnt-tools" ng-if="tab == 3" class="shaded col-xs-12 padless nomargin">
+		    <li ng-repeat="tool in tools" class="col-xs-4 tool-item-cell">
+				<a href="{{tool.link}}" class="col-xs-12 section">
+					<div class="grid-icon-holder col-xs-12">
+						<img ng-src="{{tool.imageUrl}}" class="grid-icon">
+					</div>	
+					<div class="grid-item col-xs-12">
+						<span class="tool-item-desc below-image col-xs-12">{{tool.desc}}</span>
+					</div>		
+				</a>		
+		    </li>
+
+		</div>
+
+    </div>  
+
+
+    <!-- Group View for Category --> 
+    <!--div id="group-category" ng-if="tab == 2" class="col-xs-12 group">
+  		<div ng-repeat="ctgry in categories" class="alert alert-info ctgry" role="alert">
+  		  <img class="ctgryIcon" ng-src="{{ctgry.imageUrl}}"/>
+  		  <a href="#/tips/{{ctgry.id}}" class="cat_link alert-link">{{ ctgry.code | translate }}</a>
+  		</div>
+    </div-->  
+
+    <!-- Group View for Unread Articles --> 
+    <!--div id="group-favourite" ng-if="tab == 3" class="col-xs-12 group">
+      
+      <div ng-if="favourite.length == 0" class="col-xs-12">
+        No Favourite found
+      </div>  
+
+      <div class="list-group tip-list col-xs-12" ng-repeat="tip in favourite">
+        <a href="#/tip/{{tip.id}}" class="list-group-item col-xs-12">
+          <div class="tip-listitem-content">
+            <h4 class="list-group-item-heading"><span ng-bind-html="tip.title"></span></h4>
+          </div>  
+          <div class="tip-listitem-icon"> 
+            <p ng-bind-html="tip.content | feedicon" class="list-group-item-text" ></p>
+          </div>  
+        </a>
+      </div>  
+
+    </div-->  
+
+
+</div>
+
+
+
+<!-- Left Main Menu -->
+<!--div id="menu" class="menu">
+  <ul class="nav nav-list">
+    <li><a href="#/home" onclick="hidePopup()">{{ 'HOME' | translate }}</a></li>         
+    <li><a href="#/tips/5" onclick="hidePopup()">{{ 'HEALTH_TIPS' | translate }}</a></li>
+    <li><a href="#/tips/6" onclick="hidePopup()">{{ 'BEAUTY_TIPS' | translate }}</a></li>
+    <li><a href="#/tips/10" onclick="hidePopup()">{{ 'TREATMENT' | translate }}</a></li>
+    <li><a href="#/tips/3" onclick="hidePopup()">{{ 'COOKING_TIPS' | translate }}</a></li>
+    <li><a href="#/tips/1096" onclick="hidePopup()">{{ 'VETTU_TIPS' | translate }}</a></li>
+    <li><a href="#/tips/1095" onclick="hidePopup()">{{ 'MARUTHUVAM_TIPS' | translate }}</a></li>
+    <li><a href="#/tips/2920" onclick="hidePopup()">{{ 'GENERAL_TIPS' | translate }}</a></li>
+  </ul>
+</div-->
+
+<!-- Settings Menu -->
+<div id="setting" class="setting">
+  <ul class="nav nav-list">
+      <li><a href="#share" ng-click="share()">Share</a></li>
+      <li><a href="#rate" ng-click="rate()">Rate Me</a></li>
+      <li><a href="#feedback" ng-click="feedback()">Feedback</a></li>
+  </ul>
+</div>
+
+<!-- Left Main Menu -->
+<div id="menu" class="menu">
+  <ul class="nav nav-list">
+    <li><a href="#/numerology" onclick="hidePopup()">Numerology</a></li>         
+    <li><a href="#/compatibility" onclick="hidePopup()">Compatibility</a></li>
+    <li><a href="#/calculator" onclick="hidePopup()">Calculator</a></li>
+    <li><a href="#/checksheet" onclick="hidePopup()">Checksheet</a></li>
+    <li><a href="#/knowledge" onclick="hidePopup()">Knowledge</a></li>
+  </ul>
+</div>
