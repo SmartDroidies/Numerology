@@ -34,7 +34,7 @@ numerologyApp.config(['$routeProvider',
 				controller : 'ToolsCtrl'
 			}).
 			otherwise({
-				redirectTo : '/tool/ws-name/ws-name'
+				redirectTo : '/home'
 			});
 		}
 	]);

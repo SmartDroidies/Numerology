@@ -60,10 +60,14 @@ numerologyControllers.controller('HomeCtrl', ['$scope', '$rootScope', 'Numerolog
 	}
 
 	$scope.calculate = function (numerology) {         
-		console.log("Calculate Numerology");
-		var result = numerService.calculateNumerology(numerology); 
-		numerology.result = result;
-		$scope.numerology = numerology;
+		if(numerology && (numerology.name || numerology.dob)) {
+			console.log("Calculate Numerology : " + numerology.name + " - " + numerology.dob);
+			var result = numerService.calculateNumerology(numerology); 
+			numerology.result = result;
+			$scope.numerology = numerology;
+		} else {
+			alert("Enter either Name or Date Of Birth");
+		}
 	}
 
 	//Display Calculator Tab
@@ -162,6 +166,7 @@ numerologyControllers.controller('ToolsCtrl', ['$scope',  'NumerologyService',
   function($scope, numerService) {
 	$scope.display = function () {         
 		console.log("Display Tool Item Details");		
+		$scope.name = "-";
 	}
 	
 	$scope.evaluate = function(numerology) {
@@ -172,7 +177,7 @@ numerologyControllers.controller('ToolsCtrl', ['$scope',  'NumerologyService',
 	$scope.wishlist = function(numerology) {
 		//console.log("Add name to Wishlist : " + numerology.name + " - " + $scope.name)
 		var wished = [];
-		if($scope.wished) {
+		if($scope.wished && _.size($scope.wished)) {
 			wished = $scope.wished;
 		} 
 
@@ -183,11 +188,20 @@ numerologyControllers.controller('ToolsCtrl', ['$scope',  'NumerologyService',
 		//console.log("Wishlist : " + JSON.stringify($scope.wished));
 	} 
 
+	$scope.removeWishlist = function(name) {
+		//console.log("Remove item from Wishlist : " + name)
+		var wished = [];
+		if($scope.wished) {
+			wished = $scope.wished;
+			wished = _.filter(wished, function(item) {
+			     return item.name != name;
+			});		
+			$scope.wished = wished;	
+			//console.log("Wishlist Size : " + _.size(wished));
+		} 
+	} 
+
 	//Show Home
 	$scope.display();
 }]);
-
-
-
-
 

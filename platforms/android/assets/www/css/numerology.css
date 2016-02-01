@@ -243,7 +243,7 @@ body, h1, h2, h3, h4 {
     font-weight: bold;
     font-size: 26px;
     background: #ECF1EA;
-    padding: 5px;
+    padding: 5px 10px;
     border-radius: 5px;
     border: 1px solid black;
     min-width: 50px;
@@ -276,7 +276,7 @@ body, h1, h2, h3, h4 {
 }    
 
 .wishlist-head {
-    text-align: center;
+    text-align: left;
     margin: 0px;
     padding: 7px;
     font-size: 16px;
@@ -303,4 +303,25 @@ body, h1, h2, h3, h4 {
 
 .list-item-number {
 	text-align: center;
+}
+
+.list-item-control {
+	padding: 0px;
+	margin: 0px;
+    width: 25px;
+    height: 25px;	
+}
+
+.result-number {
+	padding: 5px 0px;
+    margin: 2px 0px;
+    background: #F4F3B1;
+    border-radius: 5px;
+}
+
+.result-number-label {
+    font-size: 18px;
+}
+
+.result-number-number {
 }

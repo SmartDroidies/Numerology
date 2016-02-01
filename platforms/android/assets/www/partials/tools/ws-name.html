@@ -5,7 +5,7 @@
 	  <div class="navbar-header main-header col-xs-12">
 	    <img id="menu-cntrl" class="menu-control" src="img/nav_back.png" ng-click="history.back();"/>
 	    <div class="head_section col-xs-12">
-	      <h2  id="main-title" class="inner-main-title">Name Number Worksheet</h2>
+	      <h2  id="main-title" class="inner-main-title">Destiny Number Worksheet</h2>
 	    </div>
 	  </div>
 	</nav>
@@ -36,19 +36,20 @@
 				</div>	
 				<ul class="wishlist col-xs-12 nospaced">
 					<li ng-repeat="item in wished" class="col-xs-12 wished-item">
-						<div class="col-xs-3 nospaced list-item-number">{{item.number}}</div>
+						<div class="col-xs-2 nospaced list-item-number">{{item.number}}</div>
 						<div class="col-xs-9 nospaced list-item-name">{{item.name}}</div>
+						<img class="col-xs-1 list-item-control" src="img/delete.png" ng-click="removeWishlist(item.name)"/>
 			    	</li>
 			    </ul>	
 			</div>	
 
-			<div class="col-xs-12 result-name" ng-if="numerology.name">
+			<div class="col-xs-12 result-name">
 				<div class="col-xs-2 number-cnt"><a class="number">{{name}}</a></div>	
 				<div class="col-xs-6 nospaced"> 
 					<div class="col-xs-12 bold-name">{{numerology.name}}</div>
 				</div>	
 				<div class="col-xs-4 control-cnt">
-					<button type="submit" ng-click="wishlist(numerology)" class="btn btn-numer">Add to List</button>
+					<button type="submit" ng-click="wishlist(numerology)" ng-if="numerology.name" class="btn btn-numer">Add to List</button>
 				</div>	
 			</div>	
 			<form class="rounded-form col-xs-12" data-toggle="validator" role="form">

@@ -14,17 +14,32 @@ numerologyServices.factory ('NumerologyService', function (CalculatorService, _,
 		result.expression = this.evaluateExpression(numerology);
 		//FIXME - Destiny & Hearts Desire Number
 
-		//result.lifepath = 5;
-		//result.expression = 3;
 		return result;
 	}
 
 	//Calculate LifePath Number
 	factory.evaluateLifePath = function(numerology) {
-		var lifePathNo  = 9;
+		var lifePathNo  = 0;
+		var sum = 0;
+		if(numerology.dob) {
+			//console.log("Evaluate Lifepath for : " + numerology.dob);
+			var dobArray = (numerology.dob).split("-");
+			//console.log("DOB Array : " + dobArray);
+			for (i = 0; i < dobArray.length; i++) { 
+				 sum += parseInt(dobArray[i]);
+				 //console.log("Running Life Path : " + sum);
+			}
 
-		//FIXME - Evaluate Life Path
+			if(CalculatorService.isMultiDigit(sum)) {
+				lifePathNo =  CalculatorService.deriveSingleDigit(sum);
+			}
 
+		}
+
+		if(lifePathNo == 0) {
+			lifePathNo = '-';
+		}
+		console.log("Lifepath for : " + numerology.dob + " - " + lifePathNo);
 		return lifePathNo;
 	}
 
@@ -43,18 +58,13 @@ numerologyServices.factory ('NumerologyService', function (CalculatorService, _,
 					expressionNo +=  CalculatorService.calculateValue(indvChar);
 				}
 			});
-
 		}
 
-		if(expressionNo.toString().length > 1) {
-			console.log("Reduce to single digit : " + expressionNo);
+		if(CalculatorService.isMultiDigit(expressionNo)) {
+			//console.log("Reduce to single digit : " + expressionNo);
+			expressionNo =  CalculatorService.deriveSingleDigit(expressionNo);
+			
 		}
-		//console.log("Digit Length : " + expressionNo.length);
-		/*
-		while (NumerologyUtil.isMultiDigit(expression)) {
-			expression = deriveNumerologyDigit(expression);
-		}
-		*/
 
 		return expressionNo;
 	}
@@ -119,11 +129,17 @@ numerologyServices.factory ('CalculatorService', function () {
 	//Calculate Numerology Value
 	factoryCalc.calculateValue = function(inputChar) {
 		var value = 0;
-
-		//FIXME - Calculate NUmerologu Value here
-		//console.log("Calculate Value for " + inputChar);
-		value = 5;
-
+		if(inputChar.trim().length == 1) {
+			inputChar = inputChar.toLowerCase();
+			if(alphabetArray[inputChar] != undefined) { 
+				value = alphabetArray[inputChar];
+				//console.log("Calculate Value for : " + inputChar + " - " + value);
+			} else {
+				console.log("Ignored Invalid Input Character : " + inputChar);	
+			}
+		} else {
+			console.log("Ignored Invalid Input Character : " + inputChar);
+		}	
 		return value;
 	}
 
@@ -131,10 +147,32 @@ numerologyServices.factory ('CalculatorService', function () {
 	//Derive Single Digit
 	factoryCalc.deriveSingleDigit = function(digit) {
 		var singleDigit = 0;
+		//console.log("Derive Single Digit for : " + digit);
+		var digitArray = digit.toString().split("");
+		//console.log("Digit Array : " + digitArray);
 
-		//FIXME - Derive Single Digit
+		for (i = 0; i < digitArray.length; i++) { 
+ 		   singleDigit += parseInt(digitArray[i]);
+ 		   //console.log("Running Single Digit : " + singleDigit);
+		}
+
+		//TODO - Check if ther is possibility of double digit appearing again
+		if(this.isMultiDigit(singleDigit)) {
+			singleDigit = this.deriveSingleDigit(singleDigit);
+		}
 
 		return singleDigit;
+	}
+
+	//Check if  Multi Digit
+	factoryCalc.isMultiDigit = function(digit) {
+		var multiDigit = false;
+
+		if(digit.toString().length > 1) {
+			multiDigit = true;
+		}
+
+		return multiDigit;
 	}
 
 
