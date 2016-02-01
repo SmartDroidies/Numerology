@@ -3,7 +3,7 @@
 	<!-- Header -->
 	<nav class="navbar navbar-default navbar-fixed-top navbar-nlogy col-xs-12" role="navigation">
 	  <div class="navbar-header main-header col-xs-12">
-	    <img id="menu-cntrl" class="menu-control" src="img/nav_menu.png" ng-click="showMenu()"/>
+	    <!--img id="menu-cntrl" class="menu-control" src="img/nav_menu.png" ng-click="showMenu()"/-->
 	    <div class="head_section col-xs-12">
 	      <h2  id="main-title" class="main-title">Numerology</h2>
 	    </div>
@@ -13,16 +13,16 @@
 
 	<ul id="main-tabs" class="nav nav-tabs col-xs-12 main-tabs">
 		<li class="col-xs-3" ng-class="{'active': tab == 1}" ng-click="calculator()">
-			<a class="main-tab-link">Calc </a>
+			<a class="main-tab-link"><img class="tab-icon" src="img/ic_person.png" /></a>
 		</li>
 		<li class="col-xs-3" ng-class="{'active': tab == 2}" ng-click="compatibility()">
-			<a class="main-tab-link">Compat </a>
+			<a class="main-tab-link"><img class="tab-icon" src="img/ic_people.png" /> </a>
 		</li>
-		<li class="col-xs-3" ng-class="{'active': tab == 3}" ng-click="tools()">
-			<a class="main-tab-link">Tools </a>
+		<li class="col-xs-3" ng-class="{'active': tab == 3}" ng-click="toollist()">
+			<a class="main-tab-link"><img class="tab-icon" src="img/ic_tool.png" /> </a>
 		</li>
 		<li class="col-xs-3" ng-class="{'active': tab == 4}" ng-click="knowledge()">
-			<a class="main-tab-link">Knowledge </a>
+			<a class="main-tab-link"><img class="tab-icon" src="img/ic_info.png" /></a>
 		</li>
 	</ul>
 
@@ -53,16 +53,16 @@
 				</div>
 				<!--pre>form = {{numerology | json}}</pre-->
 			</form>	
-			<div class="col-xs-12 result">
+			<div class="col-xs-12 result" ng-if="numerology.result.available">
 				<div class="col-xs-12 result-number">
-					<div class="col-xs-10 result-number-label">Life Path</div>
-					<div class="col-xs-2 nospaced">
+					<div class="col-xs-10 result-number-label">Life Path <label class="label-desc">(Based on Date Of Birth)<label></div>
+					<div class="col-xs-2 nospaced centered">
 						<div class="result-number-number">{{numerology.result.lifepath}}</div>
 					</div>
 				</div>	
 				<div class="col-xs-12 result-number">
-					<div class="col-xs-10 result-number-label">Expression</div>
-					<div class="col-xs-2 nospaced">
+					<div class="col-xs-10 result-number-label">Expression <label class="label-desc">(Based on Name)</label></div>
+					<div class="col-xs-2 nospaced centered">
 						<div class="result-number-number">{{numerology.result.expression}}</div>
 					</div>
 				</div>
@@ -71,17 +71,18 @@
 
 	    <!-- Group View for Tools --> 
 		<div id="cnt-tools" ng-if="tab == 3" class="shaded col-xs-12 padless nomargin">
-		    <li ng-repeat="tool in tools" class="col-xs-4 tool-item-cell">
-				<a href="{{tool.link}}" class="col-xs-12 section">
-					<div class="grid-icon-holder col-xs-12">
-						<img ng-src="{{tool.imageUrl}}" class="grid-icon">
-					</div>	
-					<div class="grid-item col-xs-12">
-						<span class="tool-item-desc below-image col-xs-12">{{tool.desc}}</span>
-					</div>		
-				</a>		
-		    </li>
-
+			<ul class="col-xs-12 rounded-content">
+			    <li ng-repeat="tool in tools" class="col-xs-4 tool-item-cell">
+					<a href="{{tool.link}}" class="col-xs-12 section">
+						<div class="grid-icon-holder col-xs-12">
+							<img ng-src="{{tool.imageUrl}}" class="grid-icon">
+						</div>	
+						<div class="grid-item col-xs-12">
+							<span class="tool-item-desc below-image col-xs-12">{{tool.desc}}</span>
+						</div>		
+					</a>		
+			    </li>
+			</ul>    
 		</div>
 
     </div>  

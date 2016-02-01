@@ -8,6 +8,15 @@ numerologyControllers.controller('HomeCtrl', ['$scope', '$rootScope', 'Numerolog
   function($scope, $rootScope, numerService) {
 
 	$scope.showHome = function () {         
+		if($rootScope.tab == 1) { 
+			$scope.calculator();
+		} else if ($rootScope.tab == 2) {
+			$scope.compatibility();	
+		} else if ($rootScope.tab == 3) {
+			$scope.toollist();
+		} else if ($rootScope.tab == 4) {
+			$scope.knowledge();
+		} 	
 	}
 
 	//Show or Hide Menu
@@ -64,6 +73,7 @@ numerologyControllers.controller('HomeCtrl', ['$scope', '$rootScope', 'Numerolog
 			console.log("Calculate Numerology : " + numerology.name + " - " + numerology.dob);
 			var result = numerService.calculateNumerology(numerology); 
 			numerology.result = result;
+			numerology.result.available = true;
 			$scope.numerology = numerology;
 		} else {
 			alert("Enter either Name or Date Of Birth");
@@ -71,25 +81,25 @@ numerologyControllers.controller('HomeCtrl', ['$scope', '$rootScope', 'Numerolog
 	}
 
 	//Display Calculator Tab
-	$scope.calculator = function (numerology) {         
+	$scope.calculator = function () {         
 		$rootScope.tab = 1;
 	}
 
 	//Display Compatibility Tab
-	$scope.compatibility = function (numerology) {         
+	$scope.compatibility = function () {         
 		$rootScope.tab = 2;
 	}
 
 	//Display Tools
-	$scope.tools = function () {         
+	$scope.toollist = function () {
 		$rootScope.tab = 3;
 		//Check if tools are initialized
-		console.log('Collecting tool list');
+		//console.log('Collecting tool list');
 		var promise =  numerService.collectTools();
 		promise.then (
   			function(data) {
 			 	$scope.tools = data.tools;
-			 	console.log('Tools : ' +  $scope.tools);
+			 	//console.log('Tools : ' +  $scope.tools);
   			},
   			function(error) {
     			console.log('No Tools Found.');

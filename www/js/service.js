@@ -71,7 +71,7 @@ numerologyServices.factory ('NumerologyService', function (CalculatorService, _,
 
 	//Load List of Tools
 	factory.loadToolList = function() {
-		console.log('Load Tool List From Filesystem');
+		//console.log('Load Tool List From Filesystem');
 		return $http.get('files/tools.json');
 	};
 
