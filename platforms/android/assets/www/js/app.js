@@ -33,6 +33,10 @@ numerologyApp.config(['$routeProvider',
 				templateUrl : 'partials/tools/ws-name.html',
 				controller : 'ToolsCtrl'
 			}).
+			when('/tool/number/:name', {
+				templateUrl : 'partials/tools/qualities.html',
+				controller : 'ToolsCtrl'
+			}).
 			otherwise({
 				redirectTo : '/home'
 			});

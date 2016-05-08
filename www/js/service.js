@@ -75,6 +75,12 @@ numerologyServices.factory ('NumerologyService', function (CalculatorService, _,
 		return $http.get('files/tools.json');
 	};
 
+	//Load Number Qualities
+	factory.loadQualities = function() {
+		//console.log('Load Qualities From Filesystem');
+		return $http.get('files/qualities.json');
+	};
+
 
 	//Collect list of tools 
 	factory.collectTools = function() {
@@ -114,6 +120,25 @@ numerologyServices.factory ('NumerologyService', function (CalculatorService, _,
 			deferred.resolve({categories: categories});
 		}
 		*/
+		return deferred.promise;
+	} 
+
+	//Collect list of Qualities 
+	factory.collectQualities = function() {
+		var deferred = $q.defer();
+		var promise = this.loadQualities();
+   		promise.then(
+      		function(payload) { 
+          		qualities = payload.data;
+				//if(qualities) {
+					//cacheService.put(key, qualities);
+				//}
+          		deferred.resolve({qualities: qualities});
+      		},
+      		function(errorPayload) {
+      			console.log('Failure loading qualities ' + errorPayload);
+      			deferred.reject(errorPayload);
+      		});
 		return deferred.promise;
 	} 
 

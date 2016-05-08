@@ -1,0 +1,102 @@
+[
+  {
+    "number": "1",
+    "quality": "Leadership, individuality, aggression, self-confidence, originality, impatience",
+    "positive" : "",
+    "negative" : "", 
+    "harmonious" : "1, 2, 9, 3",
+    "friends" : "1, 2, 3, 4, 7, 9",
+    "enemies" : "6, 8",
+    "neutral" : "5",
+    "order": "1"
+  },
+  {
+    "number": "2",
+    "quality": "Balance, partnership, receptivity, collaboration, diplomacy, patience",
+    "positive" : "",
+    "negative" : "", 
+    "harmonious" : "2, 1, 5",
+    "friends" : "2, 1, 4, 5, 7",
+    "enemies" : "",
+    "neutral" : " 3, 6, 8, 9",
+    "order": "2"
+
+  },
+  {
+    "number": "3",
+    "quality": "Self-expression, innovation, creativity, communication, activity",
+    "positive" : "",
+    "negative" : "", 
+    "harmonious" : "3, 1, 2, 9",
+    "friends" : "3, 1, 2, 4, 7, 9",
+    "enemies" : "5, 6",
+    "neutral" : " 8",
+    "order": "3"
+  },
+  {
+    "number": "4",
+    "quality": "Stability, dependability, discipline, dedication, over-cautious, stubborn",
+    "positive" : "",
+    "negative" : "", 
+    "harmonious" : "1, 5",
+    "friends" : "4, 1, 2, 3, 7,9",
+    "enemies" : "6, 8",
+    "neutral" : "5",
+    "order": "4"
+  },
+  {
+    "number": "5",
+    "quality": "Progressive, pioneering, innovation, adventure, rebellion, opportunist",
+    "positive" : "",
+    "negative" : "", 
+    "harmonious" : "5, 1, 6",
+    "friends" : "5, 1, 4, 6",
+    "enemies" : "2, 7",
+    "neutral" : "3, 8, 9",
+    "order": "5"
+  },
+  {
+    "number": "6",
+    "quality": "Harmony, compassion, service, nurturing, self-righteous, chronic worrier",
+    "positive" : "",
+    "negative" : "", 
+    "harmonious" : "6, 5",
+    "friends" : " 6, 5, 8",
+    "enemies" : "1, 2, 4, 7",
+    "neutral" : "3, 9",
+    "order": "6"
+  },
+  {
+    "number": "7",
+    "quality": "Intelligence, intuition, spirituality, analytical, solitary, secretive",
+    "positive" : "",
+    "negative" : "", 
+    "harmonious" : "1, 6, 2",
+    "friends" : "7, 1, 2, 4, 5",
+    "enemies" : "",
+    "neutral" : "3, 6, 8, 9",
+    "order": "7"
+  },
+  {
+    "number": "8",
+    "quality": "Ambition, organization, practicality, successful, selfish, materialistic",
+    "positive" : "",
+    "negative" : "", 
+    "harmonious" : "5, 6",
+    "friends" : "8, 5, 6",
+    "enemies" : "1, 2, 4, 7, 9",
+    "neutral" : "3",
+    "order": "8"
+  },
+  {
+    "number": "9",
+    "quality": "Generosity, passion, altruistic, resourceful, egotistical, fragile",
+    "positive" : "",
+    "negative" : "", 
+    "harmonious" : "9, 1, 2, 3",
+    "friends" : "9, 1, 2, 3, 4, 7",
+    "enemies" : "5",
+    "neutral" : "6, 8",
+    "order": "9"
+  }
+]

@@ -138,8 +138,7 @@ numerologyControllers.controller('CompatibilityCtrl', ['$scope',
   function($scope) {
 	$scope.displayCompat = function () {         
 		console.log("Display Screen For Compatibility Calculator");		
-	}
-	
+	}	
 	
 	//Show Home
 	$scope.displayCompat();
@@ -165,17 +164,32 @@ numerologyControllers.controller('KnowledgeCtrl', ['$scope',
 		console.log("Display Screen For Knowledge");		
 	}
 	
-	
 	//Show Home
 	$scope.displayKnowledge();
 }]);
 
 
 //Controller for Tools
-numerologyControllers.controller('ToolsCtrl', ['$scope',  'NumerologyService', 
-  function($scope, numerService) {
-	$scope.display = function () {         
-		console.log("Display Tool Item Details");		
+numerologyControllers.controller('ToolsCtrl', ['$scope', 'NumerologyService', '$routeParams',
+  function($scope, numerService, $routeParams) {
+	
+	var C_QUALITIES = 'qualities';
+
+	$scope.display = function () {
+		var name = $routeParams.name;
+		//console.log("Display Tool View for : " + name);	
+		if(name == C_QUALITIES) {
+			//console.log("Display Tool View for qualities");	
+			var promise =  numerService.collectQualities();
+			promise.then (
+	  			function(data) {
+				 	$scope.qualities = data.qualities;
+				 	//console.log('Qualities : ' +  JSON.stringify($scope.qualities));
+	  			},
+	  			function(error) {
+	    			console.log('No Qualities Found.');
+	  			});
+		}
 		$scope.name = "-";
 	}
 	
@@ -211,7 +225,12 @@ numerologyControllers.controller('ToolsCtrl', ['$scope',  'NumerologyService',
 		} 
 	} 
 
+	$scope.back = function() {
+		history.go(-1);
+	} 
+
 	//Show Home
 	$scope.display();
+
 }]);
 
