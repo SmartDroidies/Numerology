@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Expression or Destiny Number",
+    "desc": "A number derived from all of the letters in your full birth name make up what is called the Expression or Destiny number",
+    "order": "1"
+  },
+  {
+    "number": "2",
+    "quality": "Balance, partnership, receptivity, collaboration, diplomacy, patience",
+    "order": "2"
+  },
+  {
+    "number": "3",
+    "quality": "Self-expression, innovation, creativity, communication, activity",
+    "order": "3"
+  },
+  {
+    "number": "4",
+    "quality": "Stability, dependability, discipline, dedication, over-cautious, stubborn",
+    "order": "4"
+  },
+  {
+    "number": "5",
+    "quality": "Progressive, pioneering, innovation, adventure, rebellion, opportunist",
+    "order": "5"
+  },
+  {
+    "number": "6",
+    "quality": "Harmony, compassion, service, nurturing, self-righteous, chronic worrier",
+    "order": "6"
+  },
+  {
+    "number": "7",
+    "quality": "Intelligence, intuition, spirituality, analytical, solitary, secretive",
+    "order": "7"
+  },
+  {
+    "number": "8",
+    "quality": "Ambition, organization, practicality, successful, selfish, materialistic",
+    "order": "8"
+  },
+  {
+    "number": "9",
+    "quality": "Generosity, passion, altruistic, resourceful, egotistical, fragile",
+    "order": "9"
+  }
+]

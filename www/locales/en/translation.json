@@ -1,0 +1,33 @@
+{
+  "app": {
+    "name": "Angular Get Started"
+  },
+  "tile" : {
+	"numerology" : "Tile 1",
+	"compatibility" : "Tile 2",
+	"traits" : "Tile 3",
+	"qualities" : "Tile 4",
+	"values" : "Tile 5"
+  },
+  "title": {
+    "request": "Request",
+    "exit" : "Thank you"
+  }, 
+  "message": {
+    "empty": "No Data Found",
+    "muhurtham": "No muhurtham details found for the selected year",
+    "kari": "No Kari Natkal found for the selected year",
+    "ausp": "No Auspicious days found for the selected year",
+    "festive": "No Festive days found for the selected year",
+    "attach" : "Attaching Screenshot would help",
+    "exit" : "Thank you for using our app.  Your feedback is much appreciated. Do you want to exit?"
+  },
+  "error" : {
+    "month": "Could not display details for the selected month",
+    "festive": "Could not display details for the selected year",
+    "generic" : "Something Broke out. We are sorry"
+  },
+  "hello": "\u0ba4\u0bbf\u0ba9\u0bae\u0bcd"
+}
+
+

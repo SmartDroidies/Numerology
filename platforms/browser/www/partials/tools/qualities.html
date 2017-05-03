@@ -1,0 +1,27 @@
+<div class="main col-xs-12">
+
+	<!-- Header -->
+	<nav class="navbar navbar-default navbar-fixed-top navbar-nlogy col-xs-12" role="navigation">
+	  <div class="navbar-header main-header col-xs-12">
+	    <img id="menu-cntrl" class="menu-control" src="img/nav_back.png" ng-click="back()"/>
+	    <div class="head_section col-xs-12">
+	      <h2  id="main-title" class="inner-main-title">Number Qualities</h2>
+	    </div>
+	  </div>
+	</nav>
+
+	<div id="inner-content" class="nav-section ui-page-active col-xs-12 main-content" data-role="page">
+		<div id="cnt-qualities" class="shaded col-xs-12 padless nomargin">
+			<div class="col-xs-12 qualities-cnt" ng-if="qualities">
+				<ul class="quality col-xs-12 nospaced">
+					<li ng-repeat="quality in qualities" class="col-xs-12 quality-item">
+						<div class="col-xs-2 quality-item-number"><a class="number-quality">{{quality.number}}</a></div>
+						<div class="col-xs-9 quality-item-comment">{{quality.quality}}</div>
+						<!--img class="col-xs-1 list-item-control" src="img/delete.png" ng-click="removeWishlist(item.name)"/-->
+			    	</li>
+			    </ul>	
+			</div>	
+		</div>
+    </div>  
+
+</div>
