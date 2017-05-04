@@ -7,10 +7,11 @@ angular.
     templateUrl: 'dashboard/dashboard.template.html',
     controller: ['$log',
       function DashboardController($log) {
+		  
         var self = this;
 
 		self.initialize = function() {
-			
+				
 		};
 
 		self.initialize();

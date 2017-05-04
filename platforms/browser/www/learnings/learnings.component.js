@@ -1,12 +1,12 @@
 'use strict';
 
-// Register `dashboard` component, along with its associated controller and template
+// Register `learnings` component, along with its associated controller and template
 angular.
-  module('dashboard').
-  component('dashboard', {
-    templateUrl: 'dashboard/dashboard.template.html',
+  module('learnings').
+  component('learnings', {
+    templateUrl: 'learnings/learnings.template.html',
     controller: ['$log',
-      function DashboardController($log) {
+      function LearningsController($log) {
         var self = this;
 
 		self.initialize = function() {

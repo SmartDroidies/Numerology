@@ -1,4 +1,4 @@
 'use strict';
 
-// Define the `dashboard` module
-angular.module('dashboard', []);
+// Define the `learnings` module
+angular.module('learnings', []);

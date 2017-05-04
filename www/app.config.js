@@ -22,7 +22,7 @@ angular.
         when('/learnings', {
           template: '<learning></learning>'
         }).
-        otherwise('/dashboard');
+        otherwise('/values');
     }
   ])
   .constant('config', {

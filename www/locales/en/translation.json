@@ -7,7 +7,7 @@
 	"compatibility" : "Tile 2",
 	"traits" : "Tile 3",
 	"qualities" : "Tile 4",
-	"values" : "Tile 5"
+	"values" : "Values 5"
   },
   "title": {
     "request": "Request",
