@@ -14,5 +14,6 @@ angular.module('numerologyApp', [
   'header',
   'dashboard',
   'charValues',
-  'numberQualities'
+  'numberQualities',
+  'learnings'
 ]);

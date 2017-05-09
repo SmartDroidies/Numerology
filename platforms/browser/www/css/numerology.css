@@ -22,8 +22,14 @@ md-list.list-charvalues {
 }
 
 .char-value-head {
-    margin: 4px 16px;
-    border-radius: 50px;
-    background: #8b8bf1; /* Fix me  */
+/*    margin: 4px 16px; */
 }
 
+.char-value-head div {
+    border-radius: 50px;
+    background: #8b8bf1;  /* Fix me  */
+    min-width: 40px;
+    min-height: 40px;
+    margin: auto;
+    text-align: center;
+}

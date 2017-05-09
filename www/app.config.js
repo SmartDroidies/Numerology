@@ -20,9 +20,9 @@ angular.
           template: '<number-qualities></number-qualities>'
         }).
         when('/learnings', {
-          template: '<learning></learning>'
+          template: '<learnings></learnings>'
         }).
-        otherwise('/values');
+        otherwise('/learnings');
     }
   ])
   .constant('config', {
@@ -50,6 +50,28 @@ angular.
   
   .run(function($rootScope, $log, $firebaseObject) {
 	
+		$rootScope.authenticate = function() {
+          firebase.auth().signInAnonymously().catch(function(error) {
+            $log.error("Error on Firebase SignIn : " + error.message);
+			window.Firebase.exception(error.message);
+            self.progress = false;
+            self.message = 'error.firebase';
+          });
+		
+          firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+              // User is signed in.
+              var isAnonymous = user.isAnonymous;
+              var uid = user.uid;
+              $log.debug("Anonymous User : " + uid);
+            } else {
+              // User is signed out. Display Exception Message to user
+			  $log.debug("User is signed out. Display Exception Message to user");
+            }
+          });
+        };     
+		
+		$rootScope.authenticate();
 	/*
       $rootScope.loadUserPref = function() {
         var ref = firebase.database().ref("user-pref");
